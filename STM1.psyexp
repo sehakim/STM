@@ -1,0 +1,562 @@
+<PsychoPy2experiment version="1.82.01" encoding="utf-8">
+  <Settings>
+    <Param name="Show mouse" val="False" valType="bool" updates="None"/>
+    <Param name="Data filename" val="'data/%s_%s_%s' %(expInfo['participant'], expName, expInfo['date'])" valType="code" updates="None"/>
+    <Param name="Monitor" val="testMonitor" valType="str" updates="None"/>
+    <Param name="Enable Escape" val="True" valType="bool" updates="None"/>
+    <Param name="color" val="$[0,0,0]" valType="str" updates="None"/>
+    <Param name="Window size (pixels)" val="[1366, 768]" valType="code" updates="None"/>
+    <Param name="Full-screen window" val="True" valType="bool" updates="None"/>
+    <Param name="colorSpace" val="rgb" valType="str" updates="None"/>
+    <Param name="Experiment info" val="{u'participant': u'1', u'Blank Delay (ms)': u'300', u'Bar Length (px)': u'60', u'Test Display (ms)': u'500', u'Set Size': u'1', u'session': u'1', u'Bar Width (px)': u'10', u'Sample Display (ms)': u'500'}" valType="code" updates="None"/>
+    <Param name="Save csv file" val="False" valType="bool" updates="None"/>
+    <Param name="Show info dlg" val="True" valType="bool" updates="None"/>
+    <Param name="Save wide csv file" val="True" valType="bool" updates="None"/>
+    <Param name="Save psydat file" val="True" valType="bool" updates="None"/>
+    <Param name="expName" val="STM" valType="str" updates="None"/>
+    <Param name="logging level" val="exp" valType="code" updates="None"/>
+    <Param name="blendMode" val="avg" valType="str" updates="None"/>
+    <Param name="Save excel file" val="False" valType="bool" updates="None"/>
+    <Param name="Units" val="use prefs" valType="str" updates="None"/>
+    <Param name="Save log file" val="True" valType="bool" updates="None"/>
+    <Param name="Screen" val="1" valType="num" updates="None"/>
+  </Settings>
+  <Routines>
+    <Routine name="R_sample">
+      <CodeComponent name="code_sample">
+        <Param name="Begin Experiment" val="&#10;" valType="extendedCode" updates="constant"/>
+        <Param name="name" val="code_sample" valType="code" updates="None"/>
+        <Param name="Begin Routine" val="trialNum = trialNum + 1&#10;&#10;&#10;# Position of the barsbarPos= []&#10;cids = random.sample( range( nCols ), setSize )&#10;#cids = range(5)&#10;rids = random.sample( range( nRows ), setSize )&#10;#rids = range(5)&#10;for i in range( setSize ):&#10;    x = int( cids[i]*barLen + barLen/2. - colSize/2. + colPad/2. )&#10;    y = int( rids[i]*barLen + barLen/2. - rowSize/2. + rowPad/2. )&#10;    barPosition[i] = [ x, y ]&#10;&#10;print 'barPosition in r_sample', barPosition" valType="extendedCode" updates="constant"/>
+        <Param name="End Routine" val="" valType="extendedCode" updates="constant"/>
+        <Param name="End Experiment" val="" valType="extendedCode" updates="constant"/>
+        <Param name="Each Frame" val="" valType="extendedCode" updates="constant"/>
+      </CodeComponent>
+      <PolygonComponent name="polygon_sRec">
+        <Param name="opacity" val="setSize&gt;=1" valType="code" updates="constant"/>
+        <Param name="fillColorSpace" val="rgb" valType="str" updates="constant"/>
+        <Param name="name" val="polygon_sRec" valType="code" updates="None"/>
+        <Param name="fillColor" val="$[0, 0, 0]" valType="str" updates="constant"/>
+        <Param name="stopVal" val="$sampleDisp/1000" valType="code" updates="constant"/>
+        <Param name="durationEstim" val="" valType="code" updates="None"/>
+        <Param name="pos" val="[0, 0]" valType="code" updates="constant"/>
+        <Param name="interpolate" val="linear" valType="str" updates="constant"/>
+        <Param name="lineWidth" val="4" valType="code" updates="constant"/>
+        <Param name="startEstim" val="" valType="code" updates="None"/>
+        <Param name="units" val="pix" valType="str" updates="None"/>
+        <Param name="startType" val="time (s)" valType="str" updates="None"/>
+        <Param name="lineColor" val="$[-1, -1, -1]" valType="str" updates="constant"/>
+        <Param name="ori" val="0" valType="code" updates="constant"/>
+        <Param name="stopType" val="duration (s)" valType="str" updates="None"/>
+        <Param name="startVal" val="0.0" valType="code" updates="None"/>
+        <Param name="lineColorSpace" val="rgb" valType="str" updates="constant"/>
+        <Param name="nVertices" val="4" valType="int" updates="constant"/>
+        <Param name="size" val="rectSize" valType="code" updates="constant"/>
+      </PolygonComponent>
+      <PolygonComponent name="sElement_1">
+        <Param name="opacity" val="setSize&gt;=1" valType="code" updates="constant"/>
+        <Param name="fillColorSpace" val="rgb" valType="str" updates="constant"/>
+        <Param name="name" val="sElement_1" valType="code" updates="None"/>
+        <Param name="fillColor" val="$sCol1" valType="str" updates="set every repeat"/>
+        <Param name="stopVal" val="$sampleDisp/1000" valType="code" updates="constant"/>
+        <Param name="durationEstim" val="" valType="code" updates="None"/>
+        <Param name="pos" val="barPosition[0]" valType="code" updates="set every repeat"/>
+        <Param name="interpolate" val="linear" valType="str" updates="constant"/>
+        <Param name="lineWidth" val="barWidth" valType="code" updates="constant"/>
+        <Param name="startEstim" val="" valType="code" updates="None"/>
+        <Param name="units" val="pix" valType="str" updates="None"/>
+        <Param name="startType" val="time (s)" valType="str" updates="None"/>
+        <Param name="lineColor" val="$sCol1" valType="str" updates="set every repeat"/>
+        <Param name="ori" val="sOri1" valType="code" updates="set every repeat"/>
+        <Param name="stopType" val="duration (s)" valType="str" updates="None"/>
+        <Param name="startVal" val="0" valType="code" updates="None"/>
+        <Param name="lineColorSpace" val="rgb" valType="str" updates="constant"/>
+        <Param name="nVertices" val="2" valType="int" updates="constant"/>
+        <Param name="size" val="[barLen]" valType="code" updates="constant"/>
+      </PolygonComponent>
+      <PolygonComponent name="sElement_2">
+        <Param name="opacity" val="setSize&gt;=2" valType="code" updates="constant"/>
+        <Param name="fillColorSpace" val="rgb" valType="str" updates="constant"/>
+        <Param name="name" val="sElement_2" valType="code" updates="None"/>
+        <Param name="fillColor" val="$sCol2" valType="str" updates="set every repeat"/>
+        <Param name="stopVal" val="$sampleDisp/1000" valType="code" updates="constant"/>
+        <Param name="durationEstim" val="" valType="code" updates="None"/>
+        <Param name="pos" val="barPosition[1]" valType="code" updates="set every repeat"/>
+        <Param name="interpolate" val="linear" valType="str" updates="constant"/>
+        <Param name="lineWidth" val="barWidth" valType="code" updates="constant"/>
+        <Param name="startEstim" val="" valType="code" updates="None"/>
+        <Param name="units" val="pix" valType="str" updates="None"/>
+        <Param name="startType" val="time (s)" valType="str" updates="None"/>
+        <Param name="lineColor" val="$sCol2" valType="str" updates="set every repeat"/>
+        <Param name="ori" val="sOri2" valType="code" updates="set every repeat"/>
+        <Param name="stopType" val="duration (s)" valType="str" updates="None"/>
+        <Param name="startVal" val="0" valType="code" updates="None"/>
+        <Param name="lineColorSpace" val="rgb" valType="str" updates="constant"/>
+        <Param name="nVertices" val="2" valType="int" updates="constant"/>
+        <Param name="size" val="[barLen]" valType="code" updates="constant"/>
+      </PolygonComponent>
+      <PolygonComponent name="sElement_3">
+        <Param name="opacity" val="setSize&gt;=3" valType="code" updates="constant"/>
+        <Param name="fillColorSpace" val="rgb" valType="str" updates="constant"/>
+        <Param name="name" val="sElement_3" valType="code" updates="None"/>
+        <Param name="fillColor" val="$sCol3" valType="str" updates="set every repeat"/>
+        <Param name="stopVal" val="$sampleDisp/1000" valType="code" updates="constant"/>
+        <Param name="durationEstim" val="" valType="code" updates="None"/>
+        <Param name="pos" val="barPosition[2]" valType="code" updates="set every repeat"/>
+        <Param name="interpolate" val="linear" valType="str" updates="constant"/>
+        <Param name="lineWidth" val="barWidth" valType="code" updates="constant"/>
+        <Param name="startEstim" val="" valType="code" updates="None"/>
+        <Param name="units" val="pix" valType="str" updates="None"/>
+        <Param name="startType" val="time (s)" valType="str" updates="None"/>
+        <Param name="lineColor" val="$sCol3" valType="str" updates="set every repeat"/>
+        <Param name="ori" val="sOri3" valType="code" updates="set every repeat"/>
+        <Param name="stopType" val="duration (s)" valType="str" updates="None"/>
+        <Param name="startVal" val="0" valType="code" updates="None"/>
+        <Param name="lineColorSpace" val="rgb" valType="str" updates="constant"/>
+        <Param name="nVertices" val="2" valType="int" updates="constant"/>
+        <Param name="size" val="[barLen]" valType="code" updates="constant"/>
+      </PolygonComponent>
+      <PolygonComponent name="sElement_4">
+        <Param name="opacity" val="setSize&gt;=4" valType="code" updates="constant"/>
+        <Param name="fillColorSpace" val="rgb" valType="str" updates="constant"/>
+        <Param name="name" val="sElement_4" valType="code" updates="None"/>
+        <Param name="fillColor" val="$sCol4" valType="str" updates="set every repeat"/>
+        <Param name="stopVal" val="$sampleDisp/1000" valType="code" updates="constant"/>
+        <Param name="durationEstim" val="" valType="code" updates="None"/>
+        <Param name="pos" val="barPosition[3]" valType="code" updates="set every repeat"/>
+        <Param name="interpolate" val="linear" valType="str" updates="constant"/>
+        <Param name="lineWidth" val="barWidth" valType="code" updates="constant"/>
+        <Param name="startEstim" val="" valType="code" updates="None"/>
+        <Param name="units" val="pix" valType="str" updates="None"/>
+        <Param name="startType" val="time (s)" valType="str" updates="None"/>
+        <Param name="lineColor" val="$sCol4" valType="str" updates="set every repeat"/>
+        <Param name="ori" val="sOri4" valType="code" updates="set every repeat"/>
+        <Param name="stopType" val="duration (s)" valType="str" updates="None"/>
+        <Param name="startVal" val="0" valType="code" updates="None"/>
+        <Param name="lineColorSpace" val="rgb" valType="str" updates="constant"/>
+        <Param name="nVertices" val="2" valType="int" updates="constant"/>
+        <Param name="size" val="[barLen]" valType="code" updates="constant"/>
+      </PolygonComponent>
+      <PolygonComponent name="sElement_5">
+        <Param name="opacity" val="setSize&gt;=5" valType="code" updates="constant"/>
+        <Param name="fillColorSpace" val="rgb" valType="str" updates="constant"/>
+        <Param name="name" val="sElement_5" valType="code" updates="None"/>
+        <Param name="fillColor" val="$sCol5" valType="str" updates="set every repeat"/>
+        <Param name="stopVal" val="$sampleDisp/1000" valType="code" updates="constant"/>
+        <Param name="durationEstim" val="" valType="code" updates="None"/>
+        <Param name="pos" val="barPosition[4]" valType="code" updates="set every repeat"/>
+        <Param name="interpolate" val="linear" valType="str" updates="constant"/>
+        <Param name="lineWidth" val="barWidth" valType="code" updates="constant"/>
+        <Param name="startEstim" val="" valType="code" updates="None"/>
+        <Param name="units" val="pix" valType="str" updates="None"/>
+        <Param name="startType" val="time (s)" valType="str" updates="None"/>
+        <Param name="lineColor" val="$sCol5" valType="str" updates="set every repeat"/>
+        <Param name="ori" val="sOri5" valType="code" updates="set every repeat"/>
+        <Param name="stopType" val="duration (s)" valType="str" updates="None"/>
+        <Param name="startVal" val="0.0" valType="code" updates="None"/>
+        <Param name="lineColorSpace" val="rgb" valType="str" updates="constant"/>
+        <Param name="nVertices" val="2" valType="int" updates="constant"/>
+        <Param name="size" val="[barLen]" valType="code" updates="constant"/>
+      </PolygonComponent>
+    </Routine>
+    <Routine name="R_pause">
+      <TextComponent name="text_next">
+        <Param name="opacity" val="1" valType="code" updates="constant"/>
+        <Param name="colorSpace" val="rgb" valType="str" updates="constant"/>
+        <Param name="name" val="text_next" valType="code" updates="None"/>
+        <Param name="wrapWidth" val="" valType="code" updates="constant"/>
+        <Param name="color" val="white" valType="str" updates="constant"/>
+        <Param name="text" val="$str(trialNum)+' out of '+str(totalNum)+' done.\nPress any key to go on to the next trial.'" valType="str" updates="set every repeat"/>
+        <Param name="stopVal" val="" valType="code" updates="constant"/>
+        <Param name="durationEstim" val="" valType="code" updates="None"/>
+        <Param name="pos" val="[0, 0]" valType="code" updates="constant"/>
+        <Param name="flip" val="" valType="str" updates="constant"/>
+        <Param name="startEstim" val="" valType="code" updates="None"/>
+        <Param name="units" val="from exp settings" valType="str" updates="None"/>
+        <Param name="startType" val="condition" valType="str" updates="None"/>
+        <Param name="ori" val="0" valType="code" updates="constant"/>
+        <Param name="stopType" val="duration (s)" valType="str" updates="None"/>
+        <Param name="startVal" val="$trialNum&lt;totalNum" valType="code" updates="None"/>
+        <Param name="font" val="Arial" valType="str" updates="constant"/>
+        <Param name="letterHeight" val="0.1" valType="code" updates="constant"/>
+      </TextComponent>
+      <KeyboardComponent name="key_next">
+        <Param name="correctAns" val="" valType="str" updates="constant"/>
+        <Param name="storeCorrect" val="False" valType="bool" updates="constant"/>
+        <Param name="name" val="key_next" valType="code" updates="None"/>
+        <Param name="stopVal" val="" valType="code" updates="constant"/>
+        <Param name="durationEstim" val="" valType="code" updates="None"/>
+        <Param name="forceEndRoutine" val="True" valType="bool" updates="constant"/>
+        <Param name="startEstim" val="" valType="code" updates="None"/>
+        <Param name="discard previous" val="False" valType="bool" updates="constant"/>
+        <Param name="startType" val="condition" valType="str" updates="None"/>
+        <Param name="allowedKeys" val="" valType="code" updates="constant"/>
+        <Param name="stopType" val="duration (s)" valType="str" updates="None"/>
+        <Param name="startVal" val="$trialNum&lt;totalNum" valType="code" updates="None"/>
+        <Param name="store" val="nothing" valType="str" updates="constant"/>
+      </KeyboardComponent>
+      <TextComponent name="text_last">
+        <Param name="opacity" val="1" valType="code" updates="constant"/>
+        <Param name="colorSpace" val="rgb" valType="str" updates="constant"/>
+        <Param name="name" val="text_last" valType="code" updates="None"/>
+        <Param name="wrapWidth" val="" valType="code" updates="constant"/>
+        <Param name="color" val="white" valType="str" updates="constant"/>
+        <Param name="text" val="You’re done! &#10;Press Space to exit." valType="str" updates="constant"/>
+        <Param name="stopVal" val="" valType="code" updates="constant"/>
+        <Param name="durationEstim" val="" valType="code" updates="None"/>
+        <Param name="pos" val="[0, 0]" valType="code" updates="constant"/>
+        <Param name="flip" val="" valType="str" updates="constant"/>
+        <Param name="startEstim" val="" valType="code" updates="None"/>
+        <Param name="units" val="from exp settings" valType="str" updates="None"/>
+        <Param name="startType" val="condition" valType="str" updates="None"/>
+        <Param name="ori" val="0" valType="code" updates="constant"/>
+        <Param name="stopType" val="duration (s)" valType="str" updates="None"/>
+        <Param name="startVal" val="$trialNum==totalNum" valType="code" updates="None"/>
+        <Param name="font" val="Arial" valType="str" updates="constant"/>
+        <Param name="letterHeight" val="0.1" valType="code" updates="constant"/>
+      </TextComponent>
+      <KeyboardComponent name="key_last">
+        <Param name="correctAns" val="" valType="str" updates="constant"/>
+        <Param name="storeCorrect" val="False" valType="bool" updates="constant"/>
+        <Param name="name" val="key_last" valType="code" updates="None"/>
+        <Param name="stopVal" val="" valType="code" updates="constant"/>
+        <Param name="durationEstim" val="" valType="code" updates="None"/>
+        <Param name="forceEndRoutine" val="True" valType="bool" updates="constant"/>
+        <Param name="startEstim" val="" valType="code" updates="None"/>
+        <Param name="discard previous" val="True" valType="bool" updates="constant"/>
+        <Param name="startType" val="condition" valType="str" updates="None"/>
+        <Param name="allowedKeys" val="'space'" valType="code" updates="constant"/>
+        <Param name="stopType" val="duration (s)" valType="str" updates="None"/>
+        <Param name="startVal" val="$trialNum==totalNum" valType="code" updates="None"/>
+        <Param name="store" val="nothing" valType="str" updates="constant"/>
+      </KeyboardComponent>
+      <CodeComponent name="code_next">
+        <Param name="Begin Experiment" val="" valType="extendedCode" updates="constant"/>
+        <Param name="name" val="code_next" valType="code" updates="None"/>
+        <Param name="Begin Routine" val="" valType="extendedCode" updates="constant"/>
+        <Param name="End Routine" val="" valType="extendedCode" updates="constant"/>
+        <Param name="End Experiment" val="&#10;" valType="extendedCode" updates="constant"/>
+        <Param name="Each Frame" val="" valType="extendedCode" updates="constant"/>
+      </CodeComponent>
+    </Routine>
+    <Routine name="R_feedback">
+      <CodeComponent name="code_feedback">
+        <Param name="Begin Experiment" val="" valType="extendedCode" updates="constant"/>
+        <Param name="name" val="code_feedback" valType="code" updates="None"/>
+        <Param name="Begin Routine" val="if key_response.corr:&#10;    feedbackMsg = 'Correct'&#10;else:&#10;    feedbackMsg = 'Incorrect'&#10;&#10;&#10;#print 'trials.thisN='+str(trials.thisN) &lt;---&#10;#print 'trials.thisRepN='+str(trials.thisRepN)&#10;#print 'trials.thisTrialN='+str(trials.thisTrialN)" valType="extendedCode" updates="constant"/>
+        <Param name="End Routine" val="" valType="extendedCode" updates="constant"/>
+        <Param name="End Experiment" val="" valType="extendedCode" updates="constant"/>
+        <Param name="Each Frame" val="" valType="extendedCode" updates="constant"/>
+      </CodeComponent>
+      <TextComponent name="text_feedback">
+        <Param name="opacity" val="1" valType="code" updates="constant"/>
+        <Param name="colorSpace" val="rgb" valType="str" updates="constant"/>
+        <Param name="name" val="text_feedback" valType="code" updates="None"/>
+        <Param name="wrapWidth" val="" valType="code" updates="constant"/>
+        <Param name="color" val="white" valType="str" updates="constant"/>
+        <Param name="text" val="$feedbackMsg" valType="str" updates="set every repeat"/>
+        <Param name="stopVal" val="1.0" valType="code" updates="constant"/>
+        <Param name="durationEstim" val="" valType="code" updates="None"/>
+        <Param name="pos" val="[0, 0]" valType="code" updates="constant"/>
+        <Param name="flip" val="" valType="str" updates="constant"/>
+        <Param name="startEstim" val="" valType="code" updates="None"/>
+        <Param name="units" val="from exp settings" valType="str" updates="None"/>
+        <Param name="startType" val="time (s)" valType="str" updates="None"/>
+        <Param name="ori" val="0" valType="code" updates="constant"/>
+        <Param name="stopType" val="duration (s)" valType="str" updates="None"/>
+        <Param name="startVal" val="0.0" valType="code" updates="None"/>
+        <Param name="font" val="Arial" valType="str" updates="constant"/>
+        <Param name="letterHeight" val="0.1" valType="code" updates="constant"/>
+      </TextComponent>
+    </Routine>
+    <Routine name="R_response">
+      <TextComponent name="text_response">
+        <Param name="opacity" val="1" valType="code" updates="constant"/>
+        <Param name="colorSpace" val="rgb" valType="str" updates="constant"/>
+        <Param name="name" val="text_response" valType="code" updates="None"/>
+        <Param name="wrapWidth" val="" valType="code" updates="constant"/>
+        <Param name="color" val="white" valType="str" updates="constant"/>
+        <Param name="text" val="S or D?" valType="str" updates="constant"/>
+        <Param name="stopVal" val="" valType="code" updates="constant"/>
+        <Param name="durationEstim" val="" valType="code" updates="None"/>
+        <Param name="pos" val="[0, 0]" valType="code" updates="constant"/>
+        <Param name="flip" val="" valType="str" updates="constant"/>
+        <Param name="startEstim" val="" valType="code" updates="None"/>
+        <Param name="units" val="from exp settings" valType="str" updates="None"/>
+        <Param name="startType" val="time (s)" valType="str" updates="None"/>
+        <Param name="ori" val="0" valType="code" updates="constant"/>
+        <Param name="stopType" val="duration (s)" valType="str" updates="None"/>
+        <Param name="startVal" val="0.0" valType="code" updates="None"/>
+        <Param name="font" val="Arial" valType="str" updates="constant"/>
+        <Param name="letterHeight" val="0.1" valType="code" updates="constant"/>
+      </TextComponent>
+      <KeyboardComponent name="key_response">
+        <Param name="correctAns" val="$corrAns" valType="str" updates="constant"/>
+        <Param name="storeCorrect" val="True" valType="bool" updates="constant"/>
+        <Param name="name" val="key_response" valType="code" updates="None"/>
+        <Param name="stopVal" val="" valType="code" updates="constant"/>
+        <Param name="durationEstim" val="" valType="code" updates="None"/>
+        <Param name="forceEndRoutine" val="True" valType="bool" updates="constant"/>
+        <Param name="startEstim" val="" valType="code" updates="None"/>
+        <Param name="discard previous" val="True" valType="bool" updates="constant"/>
+        <Param name="startType" val="time (s)" valType="str" updates="None"/>
+        <Param name="allowedKeys" val="'s','d'" valType="code" updates="constant"/>
+        <Param name="stopType" val="duration (s)" valType="str" updates="None"/>
+        <Param name="startVal" val="0.0" valType="code" updates="None"/>
+        <Param name="store" val="first key" valType="str" updates="constant"/>
+      </KeyboardComponent>
+    </Routine>
+    <Routine name="R_test">
+      <PolygonComponent name="polygon_tRect">
+        <Param name="opacity" val="1" valType="code" updates="constant"/>
+        <Param name="fillColorSpace" val="rgb" valType="str" updates="constant"/>
+        <Param name="name" val="polygon_tRect" valType="code" updates="None"/>
+        <Param name="fillColor" val="$[0, 0, 0]" valType="str" updates="constant"/>
+        <Param name="stopVal" val="$testDisp/1000" valType="code" updates="constant"/>
+        <Param name="durationEstim" val="" valType="code" updates="None"/>
+        <Param name="pos" val="[0, 0]" valType="code" updates="constant"/>
+        <Param name="interpolate" val="linear" valType="str" updates="constant"/>
+        <Param name="lineWidth" val="4" valType="code" updates="constant"/>
+        <Param name="startEstim" val="" valType="code" updates="None"/>
+        <Param name="units" val="pix" valType="str" updates="None"/>
+        <Param name="startType" val="time (s)" valType="str" updates="None"/>
+        <Param name="lineColor" val="$[-1,-1,-1]" valType="str" updates="constant"/>
+        <Param name="ori" val="0" valType="code" updates="constant"/>
+        <Param name="stopType" val="duration (s)" valType="str" updates="None"/>
+        <Param name="startVal" val="0.0" valType="code" updates="None"/>
+        <Param name="lineColorSpace" val="rgb" valType="str" updates="constant"/>
+        <Param name="nVertices" val="4" valType="int" updates="constant"/>
+        <Param name="size" val="rectSize" valType="code" updates="constant"/>
+      </PolygonComponent>
+      <PolygonComponent name="tElement_1">
+        <Param name="opacity" val="setSize&gt;=1" valType="code" updates="constant"/>
+        <Param name="fillColorSpace" val="rgb" valType="str" updates="constant"/>
+        <Param name="name" val="tElement_1" valType="code" updates="None"/>
+        <Param name="fillColor" val="$tCol1" valType="str" updates="set every repeat"/>
+        <Param name="stopVal" val="$testDisp/1000" valType="code" updates="constant"/>
+        <Param name="durationEstim" val="" valType="code" updates="None"/>
+        <Param name="pos" val="barPosition[0]" valType="code" updates="set every repeat"/>
+        <Param name="interpolate" val="linear" valType="str" updates="constant"/>
+        <Param name="lineWidth" val="barWidth" valType="code" updates="constant"/>
+        <Param name="startEstim" val="" valType="code" updates="None"/>
+        <Param name="units" val="pix" valType="str" updates="None"/>
+        <Param name="startType" val="time (s)" valType="str" updates="None"/>
+        <Param name="lineColor" val="$tCol1" valType="str" updates="set every repeat"/>
+        <Param name="ori" val="tOri1" valType="code" updates="set every repeat"/>
+        <Param name="stopType" val="duration (s)" valType="str" updates="None"/>
+        <Param name="startVal" val="0.0" valType="code" updates="None"/>
+        <Param name="lineColorSpace" val="rgb" valType="str" updates="constant"/>
+        <Param name="nVertices" val="2" valType="int" updates="constant"/>
+        <Param name="size" val="[barLen]" valType="code" updates="constant"/>
+      </PolygonComponent>
+      <PolygonComponent name="tElement_2">
+        <Param name="opacity" val="setSize&gt;=2" valType="code" updates="constant"/>
+        <Param name="fillColorSpace" val="rgb" valType="str" updates="constant"/>
+        <Param name="name" val="tElement_2" valType="code" updates="None"/>
+        <Param name="fillColor" val="$tCol2" valType="str" updates="set every repeat"/>
+        <Param name="stopVal" val="$testDisp/1000" valType="code" updates="constant"/>
+        <Param name="durationEstim" val="" valType="code" updates="None"/>
+        <Param name="pos" val="barPosition[1]" valType="code" updates="set every repeat"/>
+        <Param name="interpolate" val="linear" valType="str" updates="constant"/>
+        <Param name="lineWidth" val="barWidth" valType="code" updates="constant"/>
+        <Param name="startEstim" val="" valType="code" updates="None"/>
+        <Param name="units" val="pix" valType="str" updates="None"/>
+        <Param name="startType" val="time (s)" valType="str" updates="None"/>
+        <Param name="lineColor" val="$tCol2" valType="str" updates="set every repeat"/>
+        <Param name="ori" val="sOri2" valType="code" updates="set every repeat"/>
+        <Param name="stopType" val="duration (s)" valType="str" updates="None"/>
+        <Param name="startVal" val="0.0" valType="code" updates="None"/>
+        <Param name="lineColorSpace" val="rgb" valType="str" updates="constant"/>
+        <Param name="nVertices" val="2" valType="int" updates="constant"/>
+        <Param name="size" val="[barLen]" valType="code" updates="constant"/>
+      </PolygonComponent>
+      <PolygonComponent name="tElement_3">
+        <Param name="opacity" val="setSize&gt;=3" valType="code" updates="constant"/>
+        <Param name="fillColorSpace" val="rgb" valType="str" updates="constant"/>
+        <Param name="name" val="tElement_3" valType="code" updates="None"/>
+        <Param name="fillColor" val="$tCol3" valType="str" updates="set every repeat"/>
+        <Param name="stopVal" val="$testDisp/1000" valType="code" updates="constant"/>
+        <Param name="durationEstim" val="" valType="code" updates="None"/>
+        <Param name="pos" val="barPosition[2]" valType="code" updates="set every repeat"/>
+        <Param name="interpolate" val="linear" valType="str" updates="constant"/>
+        <Param name="lineWidth" val="barWidth" valType="code" updates="constant"/>
+        <Param name="startEstim" val="" valType="code" updates="None"/>
+        <Param name="units" val="pix" valType="str" updates="None"/>
+        <Param name="startType" val="time (s)" valType="str" updates="None"/>
+        <Param name="lineColor" val="$tCol3" valType="str" updates="set every repeat"/>
+        <Param name="ori" val="sOri3" valType="code" updates="set every repeat"/>
+        <Param name="stopType" val="duration (s)" valType="str" updates="None"/>
+        <Param name="startVal" val="0.0" valType="code" updates="None"/>
+        <Param name="lineColorSpace" val="rgb" valType="str" updates="constant"/>
+        <Param name="nVertices" val="2" valType="int" updates="constant"/>
+        <Param name="size" val="[barLen]" valType="code" updates="constant"/>
+      </PolygonComponent>
+      <PolygonComponent name="tElement_4">
+        <Param name="opacity" val="setSize&gt;=4" valType="code" updates="constant"/>
+        <Param name="fillColorSpace" val="rgb" valType="str" updates="constant"/>
+        <Param name="name" val="tElement_4" valType="code" updates="None"/>
+        <Param name="fillColor" val="$tCol4" valType="str" updates="set every repeat"/>
+        <Param name="stopVal" val="$testDisp/1000" valType="code" updates="constant"/>
+        <Param name="durationEstim" val="" valType="code" updates="None"/>
+        <Param name="pos" val="barPosition[3]" valType="code" updates="set every repeat"/>
+        <Param name="interpolate" val="linear" valType="str" updates="constant"/>
+        <Param name="lineWidth" val="barWidth" valType="code" updates="constant"/>
+        <Param name="startEstim" val="" valType="code" updates="None"/>
+        <Param name="units" val="pix" valType="str" updates="None"/>
+        <Param name="startType" val="time (s)" valType="str" updates="None"/>
+        <Param name="lineColor" val="$tCol4" valType="str" updates="set every repeat"/>
+        <Param name="ori" val="sOri4" valType="code" updates="set every repeat"/>
+        <Param name="stopType" val="duration (s)" valType="str" updates="None"/>
+        <Param name="startVal" val="0.0" valType="code" updates="None"/>
+        <Param name="lineColorSpace" val="rgb" valType="str" updates="constant"/>
+        <Param name="nVertices" val="2" valType="int" updates="constant"/>
+        <Param name="size" val="[barLen]" valType="code" updates="constant"/>
+      </PolygonComponent>
+      <PolygonComponent name="tElement_5">
+        <Param name="opacity" val="setSize&gt;=5" valType="code" updates="constant"/>
+        <Param name="fillColorSpace" val="rgb" valType="str" updates="constant"/>
+        <Param name="name" val="tElement_5" valType="code" updates="None"/>
+        <Param name="fillColor" val="$tCol5" valType="str" updates="set every repeat"/>
+        <Param name="stopVal" val="$testDisp/1000" valType="code" updates="constant"/>
+        <Param name="durationEstim" val="" valType="code" updates="None"/>
+        <Param name="pos" val="barPosition[4]" valType="code" updates="set every repeat"/>
+        <Param name="interpolate" val="linear" valType="str" updates="constant"/>
+        <Param name="lineWidth" val="barWidth" valType="code" updates="constant"/>
+        <Param name="startEstim" val="" valType="code" updates="None"/>
+        <Param name="units" val="pix" valType="str" updates="None"/>
+        <Param name="startType" val="time (s)" valType="str" updates="None"/>
+        <Param name="lineColor" val="$tCol5" valType="str" updates="set every repeat"/>
+        <Param name="ori" val="sOri5" valType="code" updates="set every repeat"/>
+        <Param name="stopType" val="duration (s)" valType="str" updates="None"/>
+        <Param name="startVal" val="0.0" valType="code" updates="None"/>
+        <Param name="lineColorSpace" val="rgb" valType="str" updates="constant"/>
+        <Param name="nVertices" val="2" valType="int" updates="constant"/>
+        <Param name="size" val="[barLen]" valType="code" updates="constant"/>
+      </PolygonComponent>
+    </Routine>
+    <Routine name="R_instruction">
+      <TextComponent name="text_inst">
+        <Param name="opacity" val="1" valType="code" updates="constant"/>
+        <Param name="colorSpace" val="rgb" valType="str" updates="constant"/>
+        <Param name="name" val="text_inst" valType="code" updates="None"/>
+        <Param name="wrapWidth" val="" valType="code" updates="constant"/>
+        <Param name="color" val="white" valType="str" updates="constant"/>
+        <Param name="text" val="Short term memory: Same-different task&#10;&#10;Each trial contains two consecutive displays with a brief interval between them.&#10;   Press S if the two displays are exactly the same.&#10;   Press D if the two displays differ.&#10;&#10;Press Spacebar to start." valType="str" updates="constant"/>
+        <Param name="stopVal" val="" valType="code" updates="constant"/>
+        <Param name="durationEstim" val="" valType="code" updates="None"/>
+        <Param name="pos" val="[0, 0]" valType="code" updates="constant"/>
+        <Param name="flip" val="" valType="str" updates="constant"/>
+        <Param name="startEstim" val="" valType="code" updates="None"/>
+        <Param name="units" val="from exp settings" valType="str" updates="None"/>
+        <Param name="startType" val="time (s)" valType="str" updates="None"/>
+        <Param name="ori" val="0" valType="code" updates="constant"/>
+        <Param name="stopType" val="duration (s)" valType="str" updates="None"/>
+        <Param name="startVal" val="0.0" valType="code" updates="None"/>
+        <Param name="font" val="Arial" valType="str" updates="constant"/>
+        <Param name="letterHeight" val="0.09" valType="code" updates="constant"/>
+      </TextComponent>
+      <KeyboardComponent name="key_start">
+        <Param name="correctAns" val="" valType="str" updates="constant"/>
+        <Param name="storeCorrect" val="False" valType="bool" updates="constant"/>
+        <Param name="name" val="key_start" valType="code" updates="None"/>
+        <Param name="stopVal" val="" valType="code" updates="constant"/>
+        <Param name="durationEstim" val="" valType="code" updates="None"/>
+        <Param name="forceEndRoutine" val="True" valType="bool" updates="constant"/>
+        <Param name="startEstim" val="" valType="code" updates="None"/>
+        <Param name="discard previous" val="True" valType="bool" updates="constant"/>
+        <Param name="startType" val="time (s)" valType="str" updates="None"/>
+        <Param name="allowedKeys" val="'space'" valType="code" updates="constant"/>
+        <Param name="stopType" val="duration (s)" valType="str" updates="None"/>
+        <Param name="startVal" val="0.0" valType="code" updates="None"/>
+        <Param name="store" val="nothing" valType="str" updates="constant"/>
+      </KeyboardComponent>
+      <CodeComponent name="code_inst">
+        <Param name="Begin Experiment" val="import random&#10;from openpyxl import load_workbook&#10;&#10;&#10;# Pre-process&#10;&#10;# Read the input of variables&#10;blankDelay = float( expInfo['Blank Delay (ms)'] )&#10;sampleDisp = float( expInfo['Sample Display (ms)'] )&#10;testDisp = float( expInfo['Test Display (ms)'] )&#10;&#10;subjID = int( expInfo['participant'] )&#10;sessionNum = int( expInfo[ 'session' ] )&#10;setSize = int( expInfo[ 'Set Size' ] )&#10;print 'setSize=', setSize&#10;&#10;barLen = int( expInfo['Bar Length (px)'] )&#10;barWidth = int( expInfo['Bar Width (px)'] )&#10;&#10;&#10;# Trial number information&#10;nCondition = 6&#10;nRepetition = nCondition*2 # should be an even number!&#10;totalNum = nRepetition * setSize&#10;trialNum = 0 # initialize&#10;lastTag = 0&#10;&#10;# Pick the half trials that would be 'different'&#10;&#10;diffTrials = random.sample( range( totalNum ), int( totalNum/2 ) )&#10;print ['tot=', totalNum, 'diff=', diffTrials ]&#10;&#10;diffTag = [0 for i in range( totalNum ) ]&#10;for i in range( len(diffTrials) ):&#10;    diffTag[ diffTrials[i] ] = 1 # indicate that this trial is 'diff' one&#10;print diffTag&#10;&#10;# Stimuli display (a rectangular space) information&#10;rowSize = 500&#10;colSize = 800&#10;rectSize = [ colSize, rowSize ] # the area of displaying bars&#10;barPosition = [ [0,0] for i in range(5) ] # initialize&#10;print barPosition&#10;print barPosition[1]&#10;&#10;# Compute the possible location slots, making sure the bars are inside of the boundary of display&#10;rowPad = rowSize%barLen&#10;if rowPad==0:&#10;    rowPad = barLen&#10;colPad = colSize%barLen&#10;if colPad==0:&#10;    colPad = barLen&#10;#print rowPad, colPad&#10;&#10;# The possible locations of bars&#10;nRows = int( (rowSize-rowPad)/barLen )&#10;nCols = int( (colSize-colPad)/barLen )&#10;#print nRows, nCols&#10;&#10;&#10;# Randomize Orientation and Color&#10;fcolor = ['red', 'blue', 'purple', 'yellow', 'green', 'black', 'white'] #--Standard color Values.&#10;forient = [0, 90, 45, -45] #--Standard orientation Values.&#10;&#10;wb = load_workbook( filename = 'stimuliList.xlsx' )&#10;ws = wb.get_sheet_by_name( 'Sheet1' )&#10;for r in range( totalNum ):&#10;    print 'Trial ----',r,'----'&#10;    # Pick colors for the bars&#10;    randomColors = random.sample( fcolor, setSize+1 ) # the last one is used to make a different color bar&#10;    # Fill the colors&#10;    sColors = randomColors[0:setSize] # sample array color&#10;    tColors = randomColors[0:setSize] # test array colors&#10;&#10;    if diffTag[r] == 1: # if this is the trial of 'different'&#10;        diffCol = randomColors[ setSize ] &#10;&#10;        # Pick one of the sets&#10;        id = random.choice( range(setSize) )&#10;        print 'change ', id+1, ' to ', diffCol&#10;        # Change the one color in test_array&#10;        tColors[ id ] = diffCol # the last color picked&#10;        #print sColors, tColors&#10;&#10;    &#10;&#10;    # Pick orientations for the bars&#10;    sOris = []&#10;    tOris = []&#10;    for i in range( setSize ):&#10;        randomOri = random.choice( forient )&#10;        sOris.append( randomOri ) # sample array orientations&#10;        tOris.append( randomOri )&#10;&#10;&#10;    # Write the stimuli setting to the excel file&#10;&#10;    # initial color/orientation for all five bars to creat polygons,&#10;    # which are geneated all five in the beggining, &#10;    # later setSize of bars are tested though.&#10;    for i in range( 10 ):&#10;        ws.cell( row=r+1, column = 2*i ).value = 360 # initial orientation&#10;        ws.cell( row=r+1, column = 2*i+1 ).value = 'black' # initial color&#10;&#10;    for i in range( setSize ):&#10;        ws.cell( row=r+1, column = 0 + 4*i ).value = sOris[i]&#10;        ws.cell( row=r+1, column = 1 + 4*i ).value = sColors[i]&#10;        ws.cell( row=r+1, column = 2 + 4*i ).value = tOris[i]&#10;        ws.cell( row=r+1, column = 3 + 4*i ).value = tColors[i]&#10;&#10;    if diffTag[r] == 1:&#10;        ws.cell( row=r+1, column=20 ).value = 'Yes'&#10;        ws.cell( row=r+1, column=21 ).value = 'd'&#10;        ws.cell( row=r+1, column=22 ).value = id&#10;    else:&#10;        ws.cell( row=r+1, column=20 ).value = 'No'&#10;        ws.cell( row=r+1, column=21 ).value = 's'&#10;        ws.cell( row=r+1, column=22 ).value = '-'&#10;        &#10;&#10;# Save the parameters into .xls&#10;wb.save( 'stimuliList.xlsx' )&#10;&#10;# Decide the location of edges" valType="extendedCode" updates="constant"/>
+        <Param name="name" val="code_inst" valType="code" updates="None"/>
+        <Param name="Begin Routine" val="" valType="extendedCode" updates="constant"/>
+        <Param name="End Routine" val="" valType="extendedCode" updates="constant"/>
+        <Param name="End Experiment" val="" valType="extendedCode" updates="constant"/>
+        <Param name="Each Frame" val="" valType="extendedCode" updates="constant"/>
+      </CodeComponent>
+    </Routine>
+    <Routine name="R_delay">
+      <StaticComponent name="ISI_delay">
+        <Param name="code" val="" valType="code" updates="None"/>
+        <Param name="name" val="ISI_delay" valType="code" updates="None"/>
+        <Param name="stopVal" val="$blankDelay/1000" valType="code" updates="constant"/>
+        <Param name="durationEstim" val="" valType="code" updates="None"/>
+        <Param name="startEstim" val="" valType="code" updates="None"/>
+        <Param name="startType" val="time (s)" valType="str" updates="None"/>
+        <Param name="stopType" val="duration (s)" valType="str" updates="None"/>
+        <Param name="startVal" val="0.0" valType="code" updates="None"/>
+      </StaticComponent>
+    </Routine>
+    <Routine name="R_end">
+      <TextComponent name="text_end2">
+        <Param name="opacity" val="1" valType="code" updates="constant"/>
+        <Param name="colorSpace" val="rgb" valType="str" updates="constant"/>
+        <Param name="name" val="text_end2" valType="code" updates="None"/>
+        <Param name="wrapWidth" val="" valType="code" updates="constant"/>
+        <Param name="color" val="white" valType="str" updates="constant"/>
+        <Param name="text" val="You’re done! 2&#10;Press any key to exit." valType="str" updates="constant"/>
+        <Param name="stopVal" val="" valType="code" updates="constant"/>
+        <Param name="durationEstim" val="" valType="code" updates="None"/>
+        <Param name="pos" val="[0, 0]" valType="code" updates="constant"/>
+        <Param name="flip" val="" valType="str" updates="constant"/>
+        <Param name="startEstim" val="" valType="code" updates="None"/>
+        <Param name="units" val="from exp settings" valType="str" updates="None"/>
+        <Param name="startType" val="time (s)" valType="str" updates="None"/>
+        <Param name="ori" val="0" valType="code" updates="constant"/>
+        <Param name="stopType" val="duration (s)" valType="str" updates="None"/>
+        <Param name="startVal" val="0.0" valType="code" updates="None"/>
+        <Param name="font" val="Arial" valType="str" updates="constant"/>
+        <Param name="letterHeight" val="0.1" valType="code" updates="constant"/>
+      </TextComponent>
+      <KeyboardComponent name="key_end">
+        <Param name="correctAns" val="" valType="str" updates="constant"/>
+        <Param name="storeCorrect" val="False" valType="bool" updates="constant"/>
+        <Param name="name" val="key_end" valType="code" updates="None"/>
+        <Param name="stopVal" val="" valType="code" updates="constant"/>
+        <Param name="durationEstim" val="" valType="code" updates="None"/>
+        <Param name="forceEndRoutine" val="True" valType="bool" updates="constant"/>
+        <Param name="startEstim" val="" valType="code" updates="None"/>
+        <Param name="discard previous" val="True" valType="bool" updates="constant"/>
+        <Param name="startType" val="time (s)" valType="str" updates="None"/>
+        <Param name="allowedKeys" val="'y','n','left','right','space'" valType="code" updates="constant"/>
+        <Param name="stopType" val="duration (s)" valType="str" updates="None"/>
+        <Param name="startVal" val="0.0" valType="code" updates="None"/>
+        <Param name="store" val="nothing" valType="str" updates="constant"/>
+      </KeyboardComponent>
+    </Routine>
+    <Routine name="R_preprocess">
+      <CodeComponent name="code_preprocess">
+        <Param name="Begin Experiment" val="" valType="extendedCode" updates="constant"/>
+        <Param name="name" val="code_preprocess" valType="code" updates="None"/>
+        <Param name="Begin Routine" val="" valType="extendedCode" updates="constant"/>
+        <Param name="End Routine" val="" valType="extendedCode" updates="constant"/>
+        <Param name="End Experiment" val="" valType="extendedCode" updates="constant"/>
+        <Param name="Each Frame" val="" valType="extendedCode" updates="constant"/>
+      </CodeComponent>
+    </Routine>
+  </Routines>
+  <Flow>
+    <Routine name="R_instruction"/>
+    <LoopInitiator loopType="TrialHandler" name="trials">
+      <Param name="conditionsFile" val="stimuliList.xlsx" valType="str" updates="None"/>
+      <Param name="name" val="trials" valType="code" updates="None"/>
+      <Param name="isTrials" val="True" valType="bool" updates="None"/>
+      <Param name="random seed" val="" valType="code" updates="None"/>
+      <Param name="loopType" val="sequential" valType="str" updates="None"/>
+      <Param name="nReps" val="1" valType="code" updates="None"/>
+      <Param name="endPoints" val="[0, 1]" valType="num" updates="None"/>
+      <Param name="conditions" val="[{u'tort1': 45, u'corrAns': u's', u'ort5': 45, u'ort4': 0, u'ort3': 90, u'ort2': -45, u'ort1': 45, u'tcol3': u'green', u'tcol2': u'purple', u'tcol1': u'red', u'tcol5': u'yellow', u'tcol4': u'white', u'col4': u'white', u'col5': u'yellow', u'col2': u'purple', u'col3': u'green', u'col1': u'red', u'lineChanged': u'-', u'tort2': -45, u'tort3': 90, u'changed': u'No', u'tort4': 0, u'tort5': 45}, {u'tort1': -45, u'corrAns': u'd', u'ort5': -45, u'ort4': 0, u'ort3': 90, u'ort2': 45, u'ort1': -45, u'tcol3': u'yellow', u'tcol2': u'white', u'tcol1': u'purple', u'tcol5': u'black', u'tcol4': u'green', u'col4': u'green', u'col5': u'black', u'col2': u'white', u'col3': u'yellow', u'col1': u'red', u'lineChanged': 1, u'tort2': 45, u'tort3': 90, u'changed': u'Yes', u'tort4': 0, u'tort5': -45}, {u'tort1': 90, u'corrAns': u'd', u'ort5': 45, u'ort4': -45, u'ort3': 0, u'ort2': 90, u'ort1': 90, u'tcol3': u'white', u'tcol2': u'green', u'tcol1': u'purple', u'tcol5': u'black', u'tcol4': u'blue', u'col4': u'blue', u'col5': u'black', u'col2': u'green', u'col3': u'red', u'col1': u'purple', u'lineChanged': 5, u'tort2': 90, u'tort3': 0, u'changed': u'Yes', u'tort4': -45, u'tort5': 45}, {u'tort1': 0, u'corrAns': u'd', u'ort5': 0, u'ort4': 45, u'ort3': 90, u'ort2': -45, u'ort1': 0, u'tcol3': u'yellow', u'tcol2': u'purple', u'tcol1': u'green', u'tcol5': u'blue', u'tcol4': u'red', u'col4': u'red', u'col5': u'black', u'col2': u'purple', u'col3': u'yellow', u'col1': u'green', u'lineChanged': 9, u'tort2': -45, u'tort3': 90, u'changed': u'Yes', u'tort4': 45, u'tort5': 0}, {u'tort1': 0, u'corrAns': u's', u'ort5': 90, u'ort4': 0, u'ort3': -45, u'ort2': 45, u'ort1': 0, u'tcol3': u'white', u'tcol2': u'green', u'tcol1': u'yellow', u'tcol5': u'black', u'tcol4': u'blue', u'col4': u'blue', u'col5': u'black', u'col2': u'green', u'col3': u'white', u'col1': u'yellow', u'lineChanged': u'-', u'tort2': 45, u'tort3': -45, u'changed': u'No', u'tort4': 0, u'tort5': 90}, {u'tort1': 90, u'corrAns': u'd', u'ort5': 0, u'ort4': -45, u'ort3': 90, u'ort2': 45, u'ort1': 90, u'tcol3': u'green', u'tcol2': u'red', u'tcol1': u'purple', u'tcol5': u'blue', u'tcol4': u'yellow', u'col4': u'yellow', u'col5': u'white', u'col2': u'red', u'col3': u'green', u'col1': u'purple', u'lineChanged': 9, u'tort2': 45, u'tort3': 90, u'changed': u'Yes', u'tort4': -45, u'tort5': 0}, {u'tort1': 90, u'corrAns': u'd', u'ort5': 90, u'ort4': -45, u'ort3': 0, u'ort2': 45, u'ort1': 90, u'tcol3': u'purple', u'tcol2': u'white', u'tcol1': u'red', u'tcol5': u'black', u'tcol4': u'yellow', u'col4': u'yellow', u'col5': u'black', u'col2': u'green', u'col3': u'purple', u'col1': u'red', u'lineChanged': 3, u'tort2': 45, u'tort3': 0, u'changed': u'Yes', u'tort4': -45, u'tort5': 90}, {u'tort1': 90, u'corrAns': u's', u'ort5': 90, u'ort4': 0, u'ort3': 45, u'ort2': -45, u'ort1': 90, u'tcol3': u'white', u'tcol2': u'black', u'tcol1': u'yellow', u'tcol5': u'purple', u'tcol4': u'blue', u'col4': u'blue', u'col5': u'purple', u'col2': u'black', u'col3': u'white', u'col1': u'yellow', u'lineChanged': u'-', u'tort2': -45, u'tort3': 45, u'changed': u'No', u'tort4': 0, u'tort5': 90}, {u'tort1': -45, u'corrAns': u's', u'ort5': 0, u'ort4': 45, u'ort3': -45, u'ort2': 90, u'ort1': -45, u'tcol3': u'white', u'tcol2': u'red', u'tcol1': u'blue', u'tcol5': u'yellow', u'tcol4': u'purple', u'col4': u'purple', u'col5': u'yellow', u'col2': u'red', u'col3': u'white', u'col1': u'blue', u'lineChanged': u'-', u'tort2': 90, u'tort3': -45, u'changed': u'No', u'tort4': 45, u'tort5': 0}, {u'tort1': -45, u'corrAns': u's', u'ort5': 90, u'ort4': 0, u'ort3': -45, u'ort2': 45, u'ort1': -45, u'tcol3': u'black', u'tcol2': u'white', u'tcol1': u'green', u'tcol5': u'purple', u'tcol4': u'yellow', u'col4': u'yellow', u'col5': u'purple', u'col2': u'white', u'col3': u'black', u'col1': u'green', u'lineChanged': u'-', u'tort2': 45, u'tort3': -45, u'changed': u'No', u'tort4': 0, u'tort5': 90}, {u'tort1': 45, u'corrAns': u'd', u'ort5': 0, u'ort4': 90, u'ort3': 45, u'ort2': -45, u'ort1': 45, u'tcol3': u'purple', u'tcol2': u'black', u'tcol1': u'blue', u'tcol5': u'red', u'tcol4': u'yellow', u'col4': u'yellow', u'col5': u'red', u'col2': u'white', u'col3': u'purple', u'col1': u'blue', u'lineChanged': 3, u'tort2': -45, u'tort3': 45, u'changed': u'Yes', u'tort4': 90, u'tort5': 0}, {u'tort1': 45, u'corrAns': u's', u'ort5': 45, u'ort4': 90, u'ort3': 0, u'ort2': -45, u'ort1': 45, u'tcol3': u'red', u'tcol2': u'white', u'tcol1': u'black', u'tcol5': u'blue', u'tcol4': u'purple', u'col4': u'purple', u'col5': u'blue', u'col2': u'white', u'col3': u'red', u'col1': u'black', u'lineChanged': u'-', u'tort2': -45, u'tort3': 0, u'changed': u'No', u'tort4': 90, u'tort5': 45}, {u'tort1': -45, u'corrAns': u's', u'ort5': 90, u'ort4': 0, u'ort3': 45, u'ort2': -45, u'ort1': -45, u'tcol3': u'black', u'tcol2': u'white', u'tcol1': u'yellow', u'tcol5': u'green', u'tcol4': u'purple', u'col4': u'purple', u'col5': u'green', u'col2': u'white', u'col3': u'black', u'col1': u'yellow', u'lineChanged': u'-', u'tort2': -45, u'tort3': 45, u'changed': u'No', u'tort4': 0, u'tort5': 90}, {u'tort1': 0, u'corrAns': u's', u'ort5': 90, u'ort4': 45, u'ort3': -45, u'ort2': 0, u'ort1': 0, u'tcol3': u'white', u'tcol2': u'red', u'tcol1': u'green', u'tcol5': u'blue', u'tcol4': u'black', u'col4': u'black', u'col5': u'blue', u'col2': u'red', u'col3': u'white', u'col1': u'green', u'lineChanged': u'-', u'tort2': 0, u'tort3': -45, u'changed': u'No', u'tort4': 45, u'tort5': 90}, {u'tort1': -45, u'corrAns': u's', u'ort5': -45, u'ort4': 45, u'ort3': 0, u'ort2': 90, u'ort1': -45, u'tcol3': u'green', u'tcol2': u'blue', u'tcol1': u'black', u'tcol5': u'purple', u'tcol4': u'yellow', u'col4': u'yellow', u'col5': u'purple', u'col2': u'blue', u'col3': u'green', u'col1': u'black', u'lineChanged': u'-', u'tort2': 90, u'tort3': 0, u'changed': u'No', u'tort4': 45, u'tort5': -45}, {u'tort1': 0, u'corrAns': u'd', u'ort5': 45, u'ort4': 0, u'ort3': 90, u'ort2': -45, u'ort1': 0, u'tcol3': u'yellow', u'tcol2': u'black', u'tcol1': u'blue', u'tcol5': u'red', u'tcol4': u'green', u'col4': u'green', u'col5': u'purple', u'col2': u'black', u'col3': u'yellow', u'col1': u'blue', u'lineChanged': 9, u'tort2': -45, u'tort3': 90, u'changed': u'Yes', u'tort4': 0, u'tort5': 45}, {u'tort1': 0, u'corrAns': u'd', u'ort5': 0, u'ort4': 45, u'ort3': -45, u'ort2': 90, u'ort1': 0, u'tcol3': u'purple', u'tcol2': u'green', u'tcol1': u'black', u'tcol5': u'yellow', u'tcol4': u'red', u'col4': u'red', u'col5': u'white', u'col2': u'green', u'col3': u'purple', u'col1': u'black', u'lineChanged': 9, u'tort2': 90, u'tort3': -45, u'changed': u'Yes', u'tort4': 45, u'tort5': 0}, {u'tort1': 45, u'corrAns': u'd', u'ort5': -45, u'ort4': 90, u'ort3': 45, u'ort2': 0, u'ort1': 45, u'tcol3': u'purple', u'tcol2': u'green', u'tcol1': u'blue', u'tcol5': u'red', u'tcol4': u'black', u'col4': u'yellow', u'col5': u'red', u'col2': u'green', u'col3': u'purple', u'col1': u'blue', u'lineChanged': 7, u'tort2': 0, u'tort3': 45, u'changed': u'Yes', u'tort4': 90, u'tort5': -45}, {u'tort1': -45, u'corrAns': u'd', u'ort5': 45, u'ort4': 90, u'ort3': -45, u'ort2': 0, u'ort1': -45, u'tcol3': u'green', u'tcol2': u'purple', u'tcol1': u'black', u'tcol5': u'white', u'tcol4': u'yellow', u'col4': u'yellow', u'col5': u'white', u'col2': u'red', u'col3': u'green', u'col1': u'black', u'lineChanged': 3, u'tort2': 0, u'tort3': -45, u'changed': u'Yes', u'tort4': 90, u'tort5': 45}, {u'tort1': -45, u'corrAns': u'd', u'ort5': 45, u'ort4': -45, u'ort3': 0, u'ort2': 90, u'ort1': -45, u'tcol3': u'black', u'tcol2': u'green', u'tcol1': u'red', u'tcol5': u'yellow', u'tcol4': u'purple', u'col4': u'purple', u'col5': u'yellow', u'col2': u'green', u'col3': u'blue', u'col1': u'red', u'lineChanged': 5, u'tort2': 90, u'tort3': 0, u'changed': u'Yes', u'tort4': -45, u'tort5': 45}, {u'tort1': 0, u'corrAns': u's', u'ort5': 45, u'ort4': 0, u'ort3': 90, u'ort2': -45, u'ort1': 0, u'tcol3': u'black', u'tcol2': u'purple', u'tcol1': u'white', u'tcol5': u'blue', u'tcol4': u'green', u'col4': u'green', u'col5': u'blue', u'col2': u'purple', u'col3': u'black', u'col1': u'white', u'lineChanged': u'-', u'tort2': -45, u'tort3': 90, u'changed': u'No', u'tort4': 0, u'tort5': 45}, {u'tort1': 45, u'corrAns': u'd', u'ort5': 90, u'ort4': -45, u'ort3': 0, u'ort2': 45, u'ort1': 45, u'tcol3': u'yellow', u'tcol2': u'purple', u'tcol1': u'green', u'tcol5': u'blue', u'tcol4': u'black', u'col4': u'black', u'col5': u'blue', u'col2': u'purple', u'col3': u'red', u'col1': u'green', u'lineChanged': 5, u'tort2': 45, u'tort3': 0, u'changed': u'Yes', u'tort4': -45, u'tort5': 90}, {u'tort1': 90, u'corrAns': u'd', u'ort5': 0, u'ort4': 45, u'ort3': -45, u'ort2': 90, u'ort1': 90, u'tcol3': u'blue', u'tcol2': u'green', u'tcol1': u'white', u'tcol5': u'purple', u'tcol4': u'black', u'col4': u'black', u'col5': u'purple', u'col2': u'green', u'col3': u'yellow', u'col1': u'white', u'lineChanged': 5, u'tort2': 90, u'tort3': -45, u'changed': u'Yes', u'tort4': 45, u'tort5': 0}, {u'tort1': 45, u'corrAns': u's', u'ort5': -45, u'ort4': 45, u'ort3': 90, u'ort2': 0, u'ort1': 45, u'tcol3': u'red', u'tcol2': u'purple', u'tcol1': u'white', u'tcol5': u'blue', u'tcol4': u'black', u'col4': u'black', u'col5': u'blue', u'col2': u'purple', u'col3': u'red', u'col1': u'white', u'lineChanged': u'-', u'tort2': 0, u'tort3': 90, u'changed': u'No', u'tort4': 45, u'tort5': -45}, {u'tort1': 90, u'corrAns': u's', u'ort5': 0, u'ort4': -45, u'ort3': 90, u'ort2': 45, u'ort1': 90, u'tcol3': u'green', u'tcol2': u'yellow', u'tcol1': u'purple', u'tcol5': u'red', u'tcol4': u'blue', u'col4': u'blue', u'col5': u'red', u'col2': u'yellow', u'col3': u'green', u'col1': u'purple', u'lineChanged': u'-', u'tort2': 45, u'tort3': 90, u'changed': u'No', u'tort4': -45, u'tort5': 0}, {u'tort1': 0, u'corrAns': u's', u'ort5': -45, u'ort4': 0, u'ort3': 90, u'ort2': 45, u'ort1': 0, u'tcol3': u'yellow', u'tcol2': u'black', u'tcol1': u'white', u'tcol5': u'red', u'tcol4': u'purple', u'col4': u'purple', u'col5': u'red', u'col2': u'black', u'col3': u'yellow', u'col1': u'white', u'lineChanged': u'-', u'tort2': 45, u'tort3': 90, u'changed': u'No', u'tort4': 0, u'tort5': -45}, {u'tort1': 45, u'corrAns': u'd', u'ort5': 45, u'ort4': 0, u'ort3': -45, u'ort2': 90, u'ort1': 45, u'tcol3': u'yellow', u'tcol2': u'black', u'tcol1': u'green', u'tcol5': u'purple', u'tcol4': u'red', u'col4': u'red', u'col5': u'purple', u'col2': u'black', u'col3': u'yellow', u'col1': u'white', u'lineChanged': 1, u'tort2': 90, u'tort3': -45, u'changed': u'Yes', u'tort4': 0, u'tort5': 45}, {u'tort1': 45, u'corrAns': u's', u'ort5': 90, u'ort4': 0, u'ort3': -45, u'ort2': 45, u'ort1': 45, u'tcol3': u'blue', u'tcol2': u'white', u'tcol1': u'red', u'tcol5': u'purple', u'tcol4': u'black', u'col4': u'black', u'col5': u'purple', u'col2': u'white', u'col3': u'blue', u'col1': u'red', u'lineChanged': u'-', u'tort2': 45, u'tort3': -45, u'changed': u'No', u'tort4': 0, u'tort5': 90}, {u'tort1': 90, u'corrAns': u'd', u'ort5': 90, u'ort4': 0, u'ort3': -45, u'ort2': 45, u'ort1': 90, u'tcol3': u'blue', u'tcol2': u'white', u'tcol1': u'black', u'tcol5': u'red', u'tcol4': u'green', u'col4': u'green', u'col5': u'red', u'col2': u'white', u'col3': u'blue', u'col1': u'purple', u'lineChanged': 1, u'tort2': 45, u'tort3': -45, u'changed': u'Yes', u'tort4': 0, u'tort5': 90}, {u'tort1': 90, u'corrAns': u'd', u'ort5': -45, u'ort4': 45, u'ort3': 90, u'ort2': 0, u'ort1': 90, u'tcol3': u'blue', u'tcol2': u'yellow', u'tcol1': u'red', u'tcol5': u'green', u'tcol4': u'purple', u'col4': u'purple', u'col5': u'green', u'col2': u'white', u'col3': u'blue', u'col1': u'red', u'lineChanged': 3, u'tort2': 0, u'tort3': 90, u'changed': u'Yes', u'tort4': 45, u'tort5': -45}, {u'tort1': -45, u'corrAns': u's', u'ort5': 0, u'ort4': 90, u'ort3': -45, u'ort2': 45, u'ort1': -45, u'tcol3': u'blue', u'tcol2': u'red', u'tcol1': u'green', u'tcol5': u'white', u'tcol4': u'purple', u'col4': u'purple', u'col5': u'white', u'col2': u'red', u'col3': u'blue', u'col1': u'green', u'lineChanged': u'-', u'tort2': 45, u'tort3': -45, u'changed': u'No', u'tort4': 90, u'tort5': 0}, {u'tort1': 90, u'corrAns': u's', u'ort5': 90, u'ort4': 0, u'ort3': 45, u'ort2': -45, u'ort1': 90, u'tcol3': u'white', u'tcol2': u'blue', u'tcol1': u'green', u'tcol5': u'black', u'tcol4': u'red', u'col4': u'red', u'col5': u'black', u'col2': u'blue', u'col3': u'white', u'col1': u'green', u'lineChanged': u'-', u'tort2': -45, u'tort3': 45, u'changed': u'No', u'tort4': 0, u'tort5': 90}, {u'tort1': 45, u'corrAns': u'd', u'ort5': 45, u'ort4': -45, u'ort3': 0, u'ort2': 90, u'ort1': 45, u'tcol3': u'yellow', u'tcol2': u'black', u'tcol1': u'red', u'tcol5': u'green', u'tcol4': u'purple', u'col4': u'purple', u'col5': u'white', u'col2': u'black', u'col3': u'yellow', u'col1': u'red', u'lineChanged': 9, u'tort2': 90, u'tort3': 0, u'changed': u'Yes', u'tort4': -45, u'tort5': 45}, {u'tort1': 0, u'corrAns': u's', u'ort5': 45, u'ort4': 90, u'ort3': 0, u'ort2': -45, u'ort1': 0, u'tcol3': u'black', u'tcol2': u'red', u'tcol1': u'yellow', u'tcol5': u'blue', u'tcol4': u'white', u'col4': u'white', u'col5': u'blue', u'col2': u'red', u'col3': u'black', u'col1': u'yellow', u'lineChanged': u'-', u'tort2': -45, u'tort3': 0, u'changed': u'No', u'tort4': 90, u'tort5': 45}, {u'tort1': 45, u'corrAns': u'd', u'ort5': -45, u'ort4': 90, u'ort3': 0, u'ort2': 45, u'ort1': 45, u'tcol3': u'blue', u'tcol2': u'red', u'tcol1': u'yellow', u'tcol5': u'purple', u'tcol4': u'white', u'col4': u'white', u'col5': u'purple', u'col2': u'black', u'col3': u'blue', u'col1': u'yellow', u'lineChanged': 3, u'tort2': 45, u'tort3': 0, u'changed': u'Yes', u'tort4': 90, u'tort5': -45}, {u'tort1': 45, u'corrAns': u's', u'ort5': 45, u'ort4': -45, u'ort3': 0, u'ort2': 90, u'ort1': 45, u'tcol3': u'red', u'tcol2': u'yellow', u'tcol1': u'purple', u'tcol5': u'green', u'tcol4': u'black', u'col4': u'black', u'col5': u'green', u'col2': u'yellow', u'col3': u'red', u'col1': u'purple', u'lineChanged': u'-', u'tort2': 90, u'tort3': 0, u'changed': u'No', u'tort4': -45, u'tort5': 45}, {u'tort1': 0, u'corrAns': u'd', u'ort5': 90, u'ort4': -45, u'ort3': 45, u'ort2': 0, u'ort1': 0, u'tcol3': u'black', u'tcol2': u'green', u'tcol1': u'yellow', u'tcol5': u'red', u'tcol4': u'white', u'col4': u'white', u'col5': u'purple', u'col2': u'green', u'col3': u'black', u'col1': u'yellow', u'lineChanged': 9, u'tort2': 0, u'tort3': 45, u'changed': u'Yes', u'tort4': -45, u'tort5': 90}, {u'tort1': -45, u'corrAns': u's', u'ort5': 90, u'ort4': 45, u'ort3': -45, u'ort2': 0, u'ort1': -45, u'tcol3': u'yellow', u'tcol2': u'red', u'tcol1': u'green', u'tcol5': u'black', u'tcol4': u'purple', u'col4': u'purple', u'col5': u'black', u'col2': u'red', u'col3': u'yellow', u'col1': u'green', u'lineChanged': u'-', u'tort2': 0, u'tort3': -45, u'changed': u'No', u'tort4': 45, u'tort5': 90}, {u'tort1': 0, u'corrAns': u'd', u'ort5': 45, u'ort4': -45, u'ort3': 90, u'ort2': 0, u'ort1': 0, u'tcol3': u'yellow', u'tcol2': u'blue', u'tcol1': u'green', u'tcol5': u'white', u'tcol4': u'black', u'col4': u'red', u'col5': u'white', u'col2': u'blue', u'col3': u'yellow', u'col1': u'green', u'lineChanged': 7, u'tort2': 0, u'tort3': 90, u'changed': u'Yes', u'tort4': -45, u'tort5': 45}, {u'tort1': 45, u'corrAns': u'd', u'ort5': 45, u'ort4': 0, u'ort3': 90, u'ort2': -45, u'ort1': 45, u'tcol3': u'blue', u'tcol2': u'red', u'tcol1': u'purple', u'tcol5': u'black', u'tcol4': u'white', u'col4': u'white', u'col5': u'black', u'col2': u'red', u'col3': u'yellow', u'col1': u'purple', u'lineChanged': 5, u'tort2': -45, u'tort3': 90, u'changed': u'Yes', u'tort4': 0, u'tort5': 45}, {u'tort1': -45, u'corrAns': u's', u'ort5': 0, u'ort4': -45, u'ort3': 45, u'ort2': 90, u'ort1': -45, u'tcol3': u'green', u'tcol2': u'white', u'tcol1': u'purple', u'tcol5': u'yellow', u'tcol4': u'red', u'col4': u'red', u'col5': u'yellow', u'col2': u'white', u'col3': u'green', u'col1': u'purple', u'lineChanged': u'-', u'tort2': 90, u'tort3': 45, u'changed': u'No', u'tort4': -45, u'tort5': 0}, {u'tort1': 45, u'corrAns': u's', u'ort5': 45, u'ort4': -45, u'ort3': 90, u'ort2': 0, u'ort1': 45, u'tcol3': u'white', u'tcol2': u'black', u'tcol1': u'red', u'tcol5': u'purple', u'tcol4': u'blue', u'col4': u'blue', u'col5': u'purple', u'col2': u'black', u'col3': u'white', u'col1': u'red', u'lineChanged': u'-', u'tort2': 0, u'tort3': 90, u'changed': u'No', u'tort4': -45, u'tort5': 45}, {u'tort1': 90, u'corrAns': u's', u'ort5': -45, u'ort4': 45, u'ort3': 0, u'ort2': 90, u'ort1': 90, u'tcol3': u'green', u'tcol2': u'yellow', u'tcol1': u'black', u'tcol5': u'blue', u'tcol4': u'white', u'col4': u'white', u'col5': u'blue', u'col2': u'yellow', u'col3': u'green', u'col1': u'black', u'lineChanged': u'-', u'tort2': 90, u'tort3': 0, u'changed': u'No', u'tort4': 45, u'tort5': -45}, {u'tort1': 0, u'corrAns': u's', u'ort5': 90, u'ort4': 45, u'ort3': -45, u'ort2': 0, u'ort1': 0, u'tcol3': u'red', u'tcol2': u'blue', u'tcol1': u'yellow', u'tcol5': u'green', u'tcol4': u'black', u'col4': u'black', u'col5': u'green', u'col2': u'blue', u'col3': u'red', u'col1': u'yellow', u'lineChanged': u'-', u'tort2': 0, u'tort3': -45, u'changed': u'No', u'tort4': 45, u'tort5': 90}, {u'tort1': 45, u'corrAns': u's', u'ort5': 0, u'ort4': 90, u'ort3': 45, u'ort2': -45, u'ort1': 45, u'tcol3': u'green', u'tcol2': u'yellow', u'tcol1': u'black', u'tcol5': u'white', u'tcol4': u'red', u'col4': u'red', u'col5': u'white', u'col2': u'yellow', u'col3': u'green', u'col1': u'black', u'lineChanged': u'-', u'tort2': -45, u'tort3': 45, u'changed': u'No', u'tort4': 90, u'tort5': 0}, {u'tort1': 90, u'corrAns': u'd', u'ort5': 45, u'ort4': -45, u'ort3': 0, u'ort2': 90, u'ort1': 90, u'tcol3': u'white', u'tcol2': u'red', u'tcol1': u'blue', u'tcol5': u'green', u'tcol4': u'yellow', u'col4': u'yellow', u'col5': u'green', u'col2': u'red', u'col3': u'white', u'col1': u'black', u'lineChanged': 1, u'tort2': 90, u'tort3': 0, u'changed': u'Yes', u'tort4': -45, u'tort5': 45}, {u'tort1': 45, u'corrAns': u'd', u'ort5': 0, u'ort4': 90, u'ort3': 45, u'ort2': -45, u'ort1': 45, u'tcol3': u'purple', u'tcol2': u'yellow', u'tcol1': u'black', u'tcol5': u'blue', u'tcol4': u'green', u'col4': u'green', u'col5': u'blue', u'col2': u'white', u'col3': u'purple', u'col1': u'black', u'lineChanged': 3, u'tort2': -45, u'tort3': 45, u'changed': u'Yes', u'tort4': 90, u'tort5': 0}, {u'tort1': 90, u'corrAns': u's', u'ort5': -45, u'ort4': 90, u'ort3': 45, u'ort2': 0, u'ort1': 90, u'tcol3': u'blue', u'tcol2': u'black', u'tcol1': u'purple', u'tcol5': u'green', u'tcol4': u'red', u'col4': u'red', u'col5': u'green', u'col2': u'black', u'col3': u'blue', u'col1': u'purple', u'lineChanged': u'-', u'tort2': 0, u'tort3': 45, u'changed': u'No', u'tort4': 90, u'tort5': -45}, {u'tort1': 0, u'corrAns': u's', u'ort5': 90, u'ort4': 45, u'ort3': -45, u'ort2': 0, u'ort1': 0, u'tcol3': u'red', u'tcol2': u'purple', u'tcol1': u'blue', u'tcol5': u'yellow', u'tcol4': u'green', u'col4': u'green', u'col5': u'yellow', u'col2': u'purple', u'col3': u'red', u'col1': u'blue', u'lineChanged': u'-', u'tort2': 0, u'tort3': -45, u'changed': u'No', u'tort4': 45, u'tort5': 90}, {u'tort1': 0, u'corrAns': u'd', u'ort5': -45, u'ort4': 90, u'ort3': 45, u'ort2': 0, u'ort1': 0, u'tcol3': u'purple', u'tcol2': u'green', u'tcol1': u'white', u'tcol5': u'blue', u'tcol4': u'black', u'col4': u'black', u'col5': u'blue', u'col2': u'green', u'col3': u'yellow', u'col1': u'white', u'lineChanged': 5, u'tort2': 0, u'tort3': 45, u'changed': u'Yes', u'tort4': 90, u'tort5': -45}, {u'tort1': 90, u'corrAns': u'd', u'ort5': -45, u'ort4': 45, u'ort3': 0, u'ort2': 90, u'ort1': 90, u'tcol3': u'yellow', u'tcol2': u'black', u'tcol1': u'blue', u'tcol5': u'white', u'tcol4': u'purple', u'col4': u'purple', u'col5': u'white', u'col2': u'black', u'col3': u'yellow', u'col1': u'green', u'lineChanged': 1, u'tort2': 90, u'tort3': 0, u'changed': u'Yes', u'tort4': 45, u'tort5': -45}, {u'tort1': 0, u'corrAns': u'd', u'ort5': 90, u'ort4': -45, u'ort3': 45, u'ort2': 0, u'ort1': 0, u'tcol3': u'blue', u'tcol2': u'purple', u'tcol1': u'red', u'tcol5': u'black', u'tcol4': u'yellow', u'col4': u'yellow', u'col5': u'black', u'col2': u'purple', u'col3': u'green', u'col1': u'red', u'lineChanged': 5, u'tort2': 0, u'tort3': 45, u'changed': u'Yes', u'tort4': -45, u'tort5': 90}, {u'tort1': 90, u'corrAns': u's', u'ort5': 90, u'ort4': -45, u'ort3': 0, u'ort2': 45, u'ort1': 90, u'tcol3': u'green', u'tcol2': u'white', u'tcol1': u'red', u'tcol5': u'black', u'tcol4': u'blue', u'col4': u'blue', u'col5': u'black', u'col2': u'white', u'col3': u'green', u'col1': u'red', u'lineChanged': u'-', u'tort2': 45, u'tort3': 0, u'changed': u'No', u'tort4': -45, u'tort5': 90}, {u'tort1': 90, u'corrAns': u's', u'ort5': 90, u'ort4': 0, u'ort3': 45, u'ort2': -45, u'ort1': 90, u'tcol3': u'green', u'tcol2': u'yellow', u'tcol1': u'purple', u'tcol5': u'white', u'tcol4': u'black', u'col4': u'black', u'col5': u'white', u'col2': u'yellow', u'col3': u'green', u'col1': u'purple', u'lineChanged': u'-', u'tort2': -45, u'tort3': 45, u'changed': u'No', u'tort4': 0, u'tort5': 90}, {u'tort1': 45, u'corrAns': u'd', u'ort5': 90, u'ort4': -45, u'ort3': 45, u'ort2': 0, u'ort1': 45, u'tcol3': u'black', u'tcol2': u'green', u'tcol1': u'red', u'tcol5': u'yellow', u'tcol4': u'blue', u'col4': u'white', u'col5': u'yellow', u'col2': u'green', u'col3': u'black', u'col1': u'red', u'lineChanged': 7, u'tort2': 0, u'tort3': 45, u'changed': u'Yes', u'tort4': -45, u'tort5': 90}, {u'tort1': -45, u'corrAns': u'd', u'ort5': -45, u'ort4': 45, u'ort3': 0, u'ort2': 90, u'ort1': -45, u'tcol3': u'red', u'tcol2': u'green', u'tcol1': u'blue', u'tcol5': u'black', u'tcol4': u'yellow', u'col4': u'yellow', u'col5': u'black', u'col2': u'green', u'col3': u'red', u'col1': u'purple', u'lineChanged': 1, u'tort2': 90, u'tort3': 0, u'changed': u'Yes', u'tort4': 45, u'tort5': -45}, {u'tort1': -45, u'corrAns': u's', u'ort5': -45, u'ort4': 45, u'ort3': 90, u'ort2': 0, u'ort1': -45, u'tcol3': u'black', u'tcol2': u'red', u'tcol1': u'blue', u'tcol5': u'green', u'tcol4': u'white', u'col4': u'white', u'col5': u'green', u'col2': u'red', u'col3': u'black', u'col1': u'blue', u'lineChanged': u'-', u'tort2': 0, u'tort3': 90, u'changed': u'No', u'tort4': 45, u'tort5': -45}, {u'tort1': -45, u'corrAns': u'd', u'ort5': 90, u'ort4': -45, u'ort3': 45, u'ort2': 0, u'ort1': -45, u'tcol3': u'green', u'tcol2': u'black', u'tcol1': u'purple', u'tcol5': u'white', u'tcol4': u'red', u'col4': u'red', u'col5': u'white', u'col2': u'black', u'col3': u'green', u'col1': u'yellow', u'lineChanged': 1, u'tort2': 0, u'tort3': 45, u'changed': u'Yes', u'tort4': -45, u'tort5': 90}, {u'tort1': 90, u'corrAns': u'd', u'ort5': -45, u'ort4': 90, u'ort3': 45, u'ort2': 0, u'ort1': 90, u'tcol3': u'white', u'tcol2': u'yellow', u'tcol1': u'blue', u'tcol5': u'black', u'tcol4': u'green', u'col4': u'green', u'col5': u'black', u'col2': u'purple', u'col3': u'white', u'col1': u'blue', u'lineChanged': 3, u'tort2': 0, u'tort3': 45, u'changed': u'Yes', u'tort4': 90, u'tort5': -45}, {u'tort1': 0, u'corrAns': u's', u'ort5': 45, u'ort4': 90, u'ort3': -45, u'ort2': 0, u'ort1': 0, u'tcol3': u'red', u'tcol2': u'blue', u'tcol1': u'black', u'tcol5': u'green', u'tcol4': u'white', u'col4': u'white', u'col5': u'green', u'col2': u'blue', u'col3': u'red', u'col1': u'black', u'lineChanged': u'-', u'tort2': 0, u'tort3': -45, u'changed': u'No', u'tort4': 90, u'tort5': 45}]" valType="str" updates="None"/>
+      <Param name="Selected rows" val="" valType="str" updates="None"/>
+    </LoopInitiator>
+    <Routine name="R_sample"/>
+    <Routine name="R_delay"/>
+    <Routine name="R_test"/>
+    <Routine name="R_response"/>
+    <Routine name="R_feedback"/>
+    <Routine name="R_pause"/>
+    <LoopTerminator name="trials"/>
+  </Flow>
+</PsychoPy2experiment>
